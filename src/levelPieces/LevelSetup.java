@@ -10,6 +10,7 @@ public class LevelSetup {
     private Drawable[] gameBoard;
     private ArrayList<GamePiece> gamePieces;
     private ArrayList<Moveable> movingPieces;
+
     public void createLevel(int levelNum) {
         switch (levelNum) {
             case 1:
@@ -39,13 +40,24 @@ public class LevelSetup {
     public int getPlayerStartLoc() {
         return 1;
     }
+
     private void createLevel1() {
         gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+
         Rock rock1 = new Rock();
-        Solider soilder1 = new Solider();
+        gameBoard[3] = rock1;
+
+        Solider soilder1 = new Solider(3);
         gamePieces.add(soilder1);
+        movingPieces.add(soilder1);
+
+        Reward reward = new Reward(6);
+        gamePieces.add(reward);
+
 
     }
+
     private void createLevel2() {
+        
     }
 }

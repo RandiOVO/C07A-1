@@ -15,6 +15,9 @@ public class Reward extends GamePiece {
 
     @Override
     public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
-        return InteractionResult.GET_POINT;
+        if (this.getLocation() == playerLocation) {
+            System.out.println("You just found a reward!");
+            return InteractionResult.GET_POINT;
+        } else return InteractionResult.NONE;
     }
 }

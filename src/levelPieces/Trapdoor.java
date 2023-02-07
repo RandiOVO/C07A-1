@@ -15,6 +15,9 @@ public class Trapdoor extends GamePiece {
 
     @Override
     public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
-        return InteractionResult.HIT;
+        if (this.getLocation() == playerLocation) {
+            System.out.println("Your player fell through a trap door!");
+            return InteractionResult.KILL;
+        } else return InteractionResult.NONE;
     }
 }
