@@ -1,0 +1,26 @@
+Assassin
+The assassin is moveable gamepiece with a completely random move pattern. The assassin
+randomly sneaks to any random position on the board when it moves. The interaction
+result is to kill the player but it must be on the same position as the player.
+
+Rock
+The rock is our object that is only Drawable. It has no other action besides being placed
+and drawn on the gameboard. Rocks are placed randomly.
+
+Solider
+The soilder implements both Movable and GamePiece. The soilder is able to attack at a distance
+of 2 and has an interaction result of HIT. For movement, the soilder patrols back and forth across the
+gameboard and changes direction at each end.
+
+Trapdoor
+The trapdoor is a stationary gamepiece. If a player lands on the exact same space, the interaction result
+will kill the player. There is 1 trap on the first level, and an additional randomly placed trap on the second
+level.
+
+Dragonfly
+The dragonfly is another moveable gamepiece. The dragonfly is harmless to players and has an interaction
+result of NONE. The dragonfly moves back and forth across the board but by anywhere from 0-3 spaces per move.
+
+Reward
+The reward is gamepiece is the goal for the player and has the interaction result of rewarding points or advancing the player.
+You must land on the same space as the reward to earn a point.
