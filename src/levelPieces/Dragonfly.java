@@ -36,6 +36,7 @@ public class Dragonfly extends GamePiece implements Moveable {
         } else {
             newPos = (currentPos + distance) < GameEngine.BOARD_SIZE ? currentPos + distance : GameEngine.BOARD_SIZE - 1;
         }
+        gameBoard[currentPos] = null;
         this.setLocation(newPos);
         gameBoard[newPos] = this;
     }
