@@ -1,10 +1,12 @@
 package levelPieces;
 
 import gameEngine.Drawable;
+import gameEngine.GameEngine;
 import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
 public class Solider extends GamePiece implements Drawable, Moveable {
+    private boolean direction = false;
 
     public Solider(int location) {
         super('S', "Solider", location);
@@ -22,14 +24,17 @@ public class Solider extends GamePiece implements Drawable, Moveable {
     @Override
     public void move(Drawable[] gameBoard, int playerLocation) {
         int currentPos = this.getLocation();
-        if (currentPos > 1) {
-            this.setLocation(currentPos - 1);
-            gameBoard[currentPos] = null;
-            gameBoard[currentPos - 1] = this;
+        int newPos = currentPos;
+        if (direction) {
+            if (currentPos + 1 < GameEngine.BOARD_SIZE) newPos = currentPos + 1;
+            else direction = false;
         } else {
-            this.setLocation(currentPos + 1);
-            gameBoard[currentPos] = null;
-            gameBoard[currentPos + 1] = this;
+            if (currentPos - 1 >= 0) newPos = currentPos - 1;
+            else direction = true;
+
         }
+        this.setLocation(newPos);
+        gameBoard[currentPos] = null;
+        gameBoard[newPos] = this;
     }
 }
