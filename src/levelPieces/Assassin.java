@@ -7,7 +7,6 @@ import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
 public class Assassin extends GamePiece implements Moveable {
-    private InteractionResult action;
     private static final Random rand = new Random();
     /**
      * Constructor for the game piece
@@ -20,7 +19,9 @@ public class Assassin extends GamePiece implements Moveable {
     @Override
     public void move(Drawable[] gameBoard, int playerLocation) {
         // The assassin moves to any random position on the board
-        this.setLocation(rand.nextInt(GameEngine.BOARD_SIZE));
+        int newPos = rand.nextInt(GameEngine.BOARD_SIZE);
+        this.setLocation(newPos);
+        gameBoard[newPos] = this;
     }
 
     @Override

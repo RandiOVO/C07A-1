@@ -2,8 +2,9 @@ package levelPieces;
 
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
+import gameEngine.Moveable;
 
-public class Dragonfly extends GamePiece {
+public class Dragonfly extends GamePiece implements Moveable {
     /**
      * Constructor for the game piece
      *
