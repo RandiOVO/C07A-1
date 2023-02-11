@@ -15,7 +15,7 @@ public class Solider extends GamePiece implements Drawable, Moveable {
     @Override
     public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
         int distance = Math.abs(playerLocation - this.getLocation());
-        if (distance < 2) {
+        if (distance < 3) {
             System.out.println("You were shot by a soilder.");
             return InteractionResult.HIT;
         } else return InteractionResult.NONE;
