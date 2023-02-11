@@ -35,10 +35,6 @@ public class TestMovingPieces {
     	
     	Drawable[] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
         Assassin assassin = new Assassin(0);
-
-        
-        gameBoard = new Drawable[GameEngine.BOARD_SIZE];
-        assassin = new Assassin(10);
         Player player = new Player(GameEngine.BOARD_SIZE - 1);
                
         int initialLocation = assassin.getLocation();
